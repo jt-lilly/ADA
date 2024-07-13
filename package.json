@@ -1,4 +1,8 @@
 {
+  "scripts": {
+    "back": "node ./backend/bin/www",
+    "front": "cd frontend && npm run dev"
+  },
   "dependencies": {
     "express-generator": "^4.16.1"
   }
