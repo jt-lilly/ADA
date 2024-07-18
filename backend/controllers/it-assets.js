@@ -1,19 +1,13 @@
 const itAssetSvc = require('../dao/it-assets');
 
-const getAllItAssets = async(req, res) => {
+const getAllItAssets = async (req, res) => {
     try {
-        const result = await itAssetSvc.getAllITAssets();
-
-        console.log(JSON.stringify(result))
-
-        if(result) {
-            res.status(200).json(result);
-        } else {
-            res.status(404).json({ message: 'resource not found' });
-        }
+        const assets = await itAssetSvc.getAllITAssets();
+        res.status(200).json({ data: assets });
     }
-    catch (error) {
-        res.status(500).json({ message: 'Internal service error' });
+    catch (e) {
+        console.log(e);
+        res.json({ status: 501, msg: `${e} ` });
     }
 };
 

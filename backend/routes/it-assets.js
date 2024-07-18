@@ -1,8 +1,8 @@
-const itAssets = require('../dao/it-assets');
+const itAssets = require('../controllers/it-assets');
 var express = require('express');
 var router = express.Router();
 
 /* GET users listing. */
-router.get('/itassets', itAssets.getAllITAssets);
+router.get('/it-assets', itAssets.getAllItAssets);
 
 module.exports = router;
